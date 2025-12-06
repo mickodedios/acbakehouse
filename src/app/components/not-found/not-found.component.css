@@ -1,0 +1,161 @@
+.not-found-page {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.not-found-icon {
+  animation: bounce 2s infinite;
+}
+
+.not-found-icon i {
+  font-size: 8rem;
+  color: #8B4513;
+  filter: drop-shadow(0 10px 20px rgba(139, 69, 19, 0.3));
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: 900;
+  color: #8B4513;
+  line-height: 1;
+  text-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+  margin: 0;
+}
+
+.error-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.error-message {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.action-buttons .btn {
+  min-width: 200px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.action-buttons .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.btn-primary {
+  background: #8B4513;
+  border-color: #8B4513;
+}
+
+.btn-primary:hover {
+  background: #A0522D;
+  border-color: #A0522D;
+}
+
+.helpful-links a {
+  color: #8B4513;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.helpful-links a:hover {
+  background: #8B4513;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Decorative floating donuts */
+.decorative-donuts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.donut {
+  position: absolute;
+  opacity: 0.1;
+  color: #8B4513;
+}
+
+.donut-1 {
+  font-size: 8rem;
+  top: 10%;
+  left: 10%;
+  animation: float 6s infinite ease-in-out;
+}
+
+.donut-2 {
+  font-size: 6rem;
+  top: 70%;
+  right: 15%;
+  animation: float 8s infinite ease-in-out 1s;
+}
+
+.donut-3 {
+  font-size: 5rem;
+  bottom: 20%;
+  left: 20%;
+  animation: float 7s infinite ease-in-out 2s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 5rem;
+  }
+  
+  .error-title {
+    font-size: 1.8rem;
+  }
+  
+  .error-message {
+    font-size: 1rem;
+  }
+  
+  .not-found-icon i {
+    font-size: 5rem;
+  }
+  
+  .action-buttons .btn {
+    min-width: 150px;
+    font-size: 0.9rem;
+  }
+  
+  .donut-1, .donut-2, .donut-3 {
+    display: none;
+  }
+}

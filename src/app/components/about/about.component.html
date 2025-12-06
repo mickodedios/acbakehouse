@@ -1,0 +1,133 @@
+<div class="about-page">
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 class="display-3 fw-bold text-white mb-3">About AC Bakehouse</h1>
+      <p class="lead text-white">Freshly Baked, Always</p>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img 
+            src="https://api.deepai.org/job-view-file/7f317ef3-38c6-40df-8565-49177496ed97/outputs/output.jpg" width="500" height="400" 
+            alt="Bakery interior" 
+            class="img-fluid rounded-3 shadow-lg">
+        </div>
+        <div class="col-lg-6">
+          <h2 class="display-5 fw-bold mb-4">Our Story</h2>
+          <p class="lead text-muted mb-4">
+            In 2019, Micko Dedios, together with his friends Kyle Lising, Oliver Sazon, and Christian Miranda, turned their shared passion for baking into AC Bakehouse — a cozy spot where people could enjoy freshly made pastries, breads, and desserts crafted with care and the finest ingredients.
+          </p>
+          <p class="mb-4">
+            What started as a small local bakery has quickly become a beloved destination in Angeles City, known for its hand-crafted treats and warm, welcoming atmosphere. Every item is made fresh daily, staying true to the philosophy of quality, flavor, and love in every bite.
+          </p>
+          <p>
+            Their signature Passionfruit Donut, made from locally sourced ingredients, embodies this philosophy: transforming simple, quality ingredients into unforgettable flavors.
+          </p>
+        </div>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+          <img 
+            src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800" 
+            alt="Chef baking" 
+            class="img-fluid rounded-3 shadow-lg">
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <h2 class="display-5 fw-bold mb-4">Our Process</h2>
+          <p class="lead text-muted mb-4">
+            Before the sun rises, the bakers begin creating the day's offerings.
+          </p>
+          <p class="mb-4">
+            Nothing is pre-made or frozen. Every donut is shaped, fried, and frosted by hand. Every croissant is layered with real butter for perfect flakiness. Every loaf of bread is allowed to ferment naturally to develop rich, authentic flavors.
+          </p>
+          <p>
+            Visitors can watch through our kitchen window as flour, butter, and passion come together to create treats that have delighted the community for over 5 years.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold">Our Journey</h2>
+        <p class="lead text-muted">Key milestones in our history</p>
+      </div>
+      
+      <div class="timeline">
+        @for (milestone of milestones; track milestone.year; let i = $index) {
+          <div class="timeline-item" [class.timeline-item-left]="i % 2 === 0">
+            <div class="timeline-marker">{{ milestone.year }}</div>
+            <div class="timeline-content">
+              <h4 class="fw-bold">{{ milestone.title }}</h4>
+              <p class="mb-0">{{ milestone.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold">Our Values</h2>
+        <p class="lead text-muted">What drives us every day</p>
+      </div>
+      
+      <div class="row g-4">
+        @for (value of values; track value.title) {
+          <div class="col-md-6 col-lg-3">
+            <div class="value-card text-center h-100">
+              <div class="value-icon">
+                <i [class]="'bi ' + value.icon"></i>
+              </div>
+              <h4 class="fw-bold mb-3">{{ value.title }}</h4>
+              <p class="text-muted mb-0">{{ value.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission-section py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center text-white">
+          <h2 class="display-4 fw-bold mb-4">Our Mission</h2>
+          <p class="lead mb-4">
+            To bring joy to our community through exceptional baked goods, crafted with 
+            integrity, passion, and respect for tradition, while continuously innovating 
+            to delight the next generation of customers.
+          </p>
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <div class="mission-stat">
+              <h3 class="display-4 fw-bold">5+</h3>
+              <p>Years of Service</p>
+            </div>
+            <div class="mission-stat">
+              <h3 class="display-4 fw-bold">20k+</h3>
+              <p>Happy Customers</p>
+            </div>
+            <div class="mission-stat">
+              <h3 class="display-4 fw-bold">100%</h3>
+              <p>Handcrafted Daily</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

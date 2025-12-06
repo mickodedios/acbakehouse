@@ -1,0 +1,135 @@
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="row align-items-center">
+      <div class="col-lg-6 text-white">
+        <h1 class="display-3 fw-bold mb-4 animate-fade-in">
+          Freshly Baked Daily
+        </h1>
+        <p class="lead mb-4 animate-fade-in-delay">
+          Experience the finest artisan pastries, breads, and desserts made with love since 2019.
+        </p>
+        <div class="animate-fade-in-delay-2">
+          <a routerLink="/products" class="btn btn-warning btn-lg me-3 mb-3">
+            <i class="bi bi-basket3-fill"></i> View Menu
+          </a>
+          <a routerLink="/about" class="btn btn-outline-light btn-lg mb-3">
+            Our Story
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4 text-center">
+        <div class="feature-box p-4">
+          <i class="bi bi-clock-history display-4 text-primary mb-3"></i>
+          <h4 class="fw-bold">5+ Years</h4>
+          <p class="text-muted">Of baking excellence and tradition</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="feature-box p-4">
+          <i class="bi bi-award-fill display-4 text-primary mb-3"></i>
+          <h4 class="fw-bold">Premium Quality</h4>
+          <p class="text-muted">Only the finest ingredients used</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="feature-box p-4">
+          <i class="bi bi-heart-fill display-4 text-primary mb-3"></i>
+          <h4 class="fw-bold">Made with Love</h4>
+          <p class="text-muted">Every item handcrafted daily</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Products -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold">Featured</h2>
+      <p class="lead text-muted">Taste our most popular creations</p>
+    </div>
+    
+    <div class="row g-4">
+      @for (product of featuredProducts; track product.name) {
+        <div class="col-md-4">
+          <div class="product-card">
+            @if (product.badge) {
+              <span class="product-badge">{{ product.badge }}</span>
+            }
+            <img [src]="product.image" [alt]="product.name" class="product-image">
+            <div class="product-info">
+              <h4 class="fw-bold">{{ product.name }}</h4>
+              <p class="text-muted">{{ product.description }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price">₱{{ product.price }}</span>
+                <button class="btn btn-primary btn-sm">
+                  <i class="bi bi-cart-plus"></i> Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+    
+    <div class="text-center mt-5">
+      <a routerLink="/products" class="btn btn-outline-primary btn-lg">
+        View All Products <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold">What Our Customers Say</h2>
+      <p class="lead text-muted">Real reviews from real people</p>
+    </div>
+    
+    <div class="row g-4">
+      @for (testimonial of testimonials; track testimonial.name) {
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="stars mb-3">
+              @for (star of [1,2,3,4,5]; track star) {
+                <i class="bi bi-star-fill text-warning"></i>
+              }
+            </div>
+            <p class="mb-4">"{{ testimonial.text }}"</p>
+            <div class="d-flex align-items-center">
+              <img [src]="testimonial.image" [alt]="testimonial.name" class="testimonial-img">
+              <div class="ms-3">
+                <h6 class="mb-0 fw-bold">{{ testimonial.name }}</h6>
+                <small class="text-muted">Verified Customer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5">
+  <div class="container text-center text-white">
+    <h2 class="display-4 fw-bold mb-4">Ready to Taste Heaven?</h2>
+    <p class="lead mb-4">Visit us today or order online for delivery!</p>
+    <a href="#order" class="btn btn-warning btn-lg">
+      <i class="bi bi-truck"></i> Order for Delivery
+    </a>
+  </div>
+</section>

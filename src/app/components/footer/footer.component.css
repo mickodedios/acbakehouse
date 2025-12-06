@@ -1,0 +1,30 @@
+footer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.hover-link {
+  transition: color 0.3s ease;
+}
+
+.hover-link:hover {
+  color: #ffc107 !important;
+}
+
+.social-links a {
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffc107 !important;
+  transform: translateY(-3px);
+}
+
+.input-group .form-control {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.input-group .btn {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}

@@ -1,0 +1,59 @@
+<div class="not-found-page">
+  <div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+      <div class="col-lg-8 text-center">
+        <!-- Animated Icon -->
+        <div class="not-found-icon mb-4">
+          <i class="bi bi-cone-striped display-1"></i>
+        </div>
+        
+        <!-- Error Code -->
+        <h1 class="error-code mb-3">404</h1>
+        
+        <!-- Message -->
+        <h2 class="error-title mb-4">Oops! Page Not Found</h2>
+        <p class="error-message mb-5">
+          It looks like you've wandered into uncharted territory. The page you're looking for 
+          might have been moved, deleted, or perhaps it never existed. Don't worry though, 
+          there are plenty of delicious options waiting for you!
+        </p>
+        
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <button class="btn btn-primary btn-lg me-3 mb-3" (click)="goHome()">
+            <i class="bi bi-house-fill"></i> Back to Home
+          </button>
+          <button class="btn btn-outline-primary btn-lg mb-3" (click)="goBack()">
+            <i class="bi bi-arrow-left"></i> Go Back
+          </button>
+        </div>
+        
+        <!-- Helpful Links -->
+        <div class="helpful-links mt-5">
+          <p class="text-muted mb-3">Here are some helpful links instead:</p>
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="/" class="text-decoration-none">
+              <i class="bi bi-house"></i> Home
+            </a>
+            <a href="/products" class="text-decoration-none">
+              <i class="bi bi-basket"></i> Products
+            </a>
+            <a href="/about" class="text-decoration-none">
+              <i class="bi bi-info-circle"></i> About
+            </a>
+            <a href="/employees" class="text-decoration-none">
+              <i class="bi bi-people"></i> Our Team
+            </a>
+          </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="decorative-donuts">
+          <i class="bi bi-circle-fill donut donut-1"></i>
+          <i class="bi bi-circle-fill donut donut-2"></i>
+          <i class="bi bi-circle-fill donut donut-3"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

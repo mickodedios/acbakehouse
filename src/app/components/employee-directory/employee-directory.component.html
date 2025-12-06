@@ -1,0 +1,144 @@
+<div class="employee-directory">
+  <!-- Header -->
+  <section class="directory-header py-5">
+    <div class="container text-center text-white">
+      <h1 class="display-4 fw-bold mb-3">Our Amazing Team</h1>
+      <p class="lead">Meet the talented people behind AC Bakehouse</p>
+    </div>
+  </section>
+
+  <!-- Statistics -->
+  <section class="py-4 bg-light">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="stat-card text-center">
+            <i class="bi bi-people-fill display-4 text-primary mb-3"></i>
+            <h3 class="fw-bold">{{ getTotalEmployees() }}</h3>
+            <p class="text-muted mb-0">Total Employees</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stat-card text-center">
+            <i class="bi bi-check-circle-fill display-4 text-success mb-3"></i>
+            <h3 class="fw-bold">{{ getActiveEmployees() }}</h3>
+            <p class="text-muted mb-0">Active Staff</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stat-card text-center">
+            <i class="bi bi-cash-coin display-4 text-warning mb-3"></i>
+            <h3 class="fw-bold">{{ getAverageSalary() }}</h3>
+            <p class="text-muted mb-0">Average Salary</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="py-4 bg-white">
+    <div class="container">
+      <div class="row g-3 align-items-end">
+        <div class="col-md-4">
+          <label class="form-label fw-bold">Search</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Search by name or position..."
+            [(ngModel)]="searchTerm"
+            (ngModelChange)="filterEmployees()">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label fw-bold">Department</label>
+          <select 
+            class="form-select" 
+            [(ngModel)]="selectedDepartment"
+            (ngModelChange)="filterEmployees()">
+            @for (dept of departments; track dept) {
+              <option [value]="dept">{{ dept }}</option>
+            }
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label fw-bold">Status</label>
+          <select 
+            class="form-select" 
+            [(ngModel)]="selectedStatus"
+            (ngModelChange)="filterEmployees()">
+            @for (status of statuses; track status) {
+              <option [value]="status">{{ status }}</option>
+            }
+          </select>
+        </div>
+        <div class="col-md-2">
+          <p class="mb-0 text-muted">
+            <strong>{{ filteredEmployees.length }}</strong> results
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Employee Cards -->
+  <section class="py-5">
+    <div class="container">
+      @if (filteredEmployees.length > 0) {
+        <div class="row g-4">
+          @for (employee of filteredEmployees; track employee.employeeNumber) {
+            <div class="col-lg-4 col-md-6">
+              <div class="employee-card">
+                <div class="employee-header">
+                  <img 
+                    [src]="employee.imageUrl" 
+                    [alt]="employee.fullName" 
+                    class="employee-photo">
+                  <span [class]="getStatusClass(employee.employmentStatus)">
+                    {{ employee.employmentStatus }}
+                  </span>
+                </div>
+                <div class="employee-body">
+                  <h4 class="fw-bold mb-2">{{ employee.fullName }}</h4>
+                  <p class="text-primary fw-semibold mb-3">{{ employee.position }}</p>
+                  
+                  <div class="employee-details">
+                    <div class="detail-item">
+                      <i class="bi bi-hash text-muted"></i>
+                      <span>{{ employee.employeeNumber }}</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-building text-muted"></i>
+                      <span>{{ employee.department }}</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-gender-ambiguous text-muted"></i>
+                      <span>{{ employee.gender }}</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-envelope text-muted"></i>
+                      <span class="email-text">{{ employee.email }}</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-calendar text-muted"></i>
+                      <span>Joined {{ employee.joinDate | date:'MMM yyyy' }}</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-cash text-muted"></i>
+                      <span class="fw-bold text-success">{{ formatSalary(employee.salary) }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      } @else {
+        <div class="text-center py-5">
+          <i class="bi bi-search display-1 text-muted"></i>
+          <h3 class="mt-4 text-muted">No employees found</h3>
+          <p class="text-muted">Try adjusting your filters</p>
+        </div>
+      }
+    </div>
+  </section>
+</div>
