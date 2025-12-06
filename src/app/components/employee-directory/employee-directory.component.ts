@@ -21,10 +21,10 @@ export class EmployeeDirectoryComponent implements OnInit {
   departments: string[] = ['All', 'Management', 'Kitchen', 'Front of House', 'Marketing', 'Logistics'];
   statuses: string[] = ['All', 'Active', 'On Leave', 'Probation'];
 
-  constructor(private employeeService: EmployeeService) {}
+  constructor(private employeeServices: EmployeeService) {}
 
   ngOnInit(): void {
-    this.employees = this.employeeService.getEmployees();
+    this.employees = this.employeeServices.getEmployees();
     this.filteredEmployees = this.employees;
   }
 
